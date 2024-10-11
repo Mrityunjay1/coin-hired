@@ -55,7 +55,6 @@ export default function HeroRight() {
   const [isClient, setIsClient] = useState(false); // Track client-side rendering
 
   useEffect(() => {
-    // Set client-side flag to true after component mounts
     setIsClient(true);
   }, []);
 

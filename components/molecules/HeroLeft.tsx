@@ -10,20 +10,17 @@ export default function HeroLeft() {
   const [itemsVisible, setItemsVisible] = useState(false);
 
   useEffect(() => {
-    // Show title after a short delay
     const titleTimer = setTimeout(() => {
       setTitleVisible(true);
-    }, 100); // Adjust the delay as needed
+    }, 100);
 
-    // Show subtitle after title
     const subtitleTimer = setTimeout(() => {
       setSubtitleVisible(true);
-    }, 600); // Delay for subtitle appearance after title
+    }, 600);
     const timer = setTimeout(() => {
       setItemsVisible(true);
     }, 500);
 
-    // Cleanup timers on component unmount
     return () => {
       clearTimeout(titleTimer);
       clearTimeout(subtitleTimer);
