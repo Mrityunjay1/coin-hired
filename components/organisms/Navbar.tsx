@@ -23,16 +23,16 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Center Section */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4 font-medium">
             <a
               href="#"
-              className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
+              className="text-slate-100 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
             >
               채용
             </a>
             <a
               href="#"
-              className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
+              className="text-slate-100 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
             >
               해외 개발자 활용 서비스
             </a>

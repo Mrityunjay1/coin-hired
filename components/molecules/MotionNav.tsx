@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BarChart, Filter, CreditCard, Settings, Phone } from "lucide-react";
 
 const navItems = [

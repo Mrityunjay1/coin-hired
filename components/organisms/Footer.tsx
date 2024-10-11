@@ -1,4 +1,5 @@
 import { Code, Users, Building2, Cog } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -8,13 +9,18 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <h2 className="text-xl font-bold text-gray-900">hyperhire</h2>
+              <Image
+                src="/images/footer.png"
+                width={150}
+                height={150}
+                alt="logo"
+              />
             </div>
             <p className="text-sm">
               우리는 국가를 넘어 함께 일하는 원격 인재를 채용합니다.
             </p>
-            <p className="text-sm">010-0000-0000</p>
-            <p className="text-sm">aaaaaa@naver.com</p>
+            <p className="text-sm font-extrabold">010-0000-0000</p>
+            <p className="text-sm font-extrabold">aaaaaa@naver.com</p>
           </div>
 
           {/* Services */}
@@ -32,7 +38,7 @@ export default function Footer() {
                 <div className="w-8 h-8 flex items-center justify-center mb-2 rounded-lg bg-gray-100 shadow-md">
                   <item.icon className="w-4 h-4 text-gray-600" />
                 </div>
-                <p className="text-xs">{item.text}</p>
+                <p className="text-sm font-bold">{item.text}</p>
                 <p className="mt-2 text-xs text-blue-600 hover:underline">
                   바로가기
                 </p>
@@ -46,20 +52,22 @@ export default function Footer() {
           <div>
             <p className="font-semibold">상호명</p>
             <p>하이퍼하이어</p>
+            <p className="mt-2 font-bold">Hyperhire India Private Limited</p>
           </div>
           <div>
             <p className="font-semibold">대표 CEO</p>
             <p>김정연</p>
+            <p className="mt-2 font-bold">Juhyun Kim</p>
           </div>
           <div>
             <p className="font-semibold">사업자등록번호 CIN</p>
-            <p>429-86-01957</p>
-            <p>U74100DL2019PTC356313</p>
+            <p className="font-bold">429-86-01957</p>
+            <p className="mt-2 font-bold">U74100DL2019PTC356313</p>
           </div>
           <div>
             <p className="font-semibold">주소 ADDRESS</p>
             <p>서울특별시 강남구 테헤란로 4길 29 4층 전체</p>
-            <p>
+            <p className="mt-2 font-bold">
               D-123, Street number-11, Jagjeet Nagar, North East Delhi, New
               Delhi, 110053 India
             </p>
@@ -67,7 +75,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-200 text-sm">
+        <div className="mt-8 pt-8 border-t font-bold border-gray-200 text-sm">
           © 2023 Hyperhire
         </div>
       </div>
