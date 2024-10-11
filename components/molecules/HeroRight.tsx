@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Briefcase } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -52,6 +52,12 @@ const profiles = [
 
 export default function HeroRight() {
   const [currentIndex, setCurrentIndex] = useState(2);
+  const [isClient, setIsClient] = useState(false); // Track client-side rendering
+
+  useEffect(() => {
+    // Set client-side flag to true after component mounts
+    setIsClient(true);
+  }, []);
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
@@ -79,16 +85,17 @@ export default function HeroRight() {
                 key={index}
                 className={`absolute transition-all duration-300 ease-in-out flex flex-col
                   h-[300px] w-[180px] md:h-[400px] md:w-[200px] ${
-                    isActive ? "z-20 opacity-100" : "z-10 opacity-50" // Set a slight opacity for inactive cards
+                    isActive ? "z-20 opacity-100" : "z-10 opacity-50"
                   }`}
                 style={{
-                  // Apply the cover flow effect for mobile screens
                   transform: `translateX(${offset * 60}%) scale(${
                     1 - absOffset * 0.2
                   }) rotateY(${offset * 45}deg)`,
-                  // Hide non-active cards on mobile
+                  // Only use window.innerWidth if the component is rendered on the client
                   display:
-                    isActive || window.innerWidth >= 768 ? "flex" : "none",
+                    isActive || (isClient && window.innerWidth >= 768)
+                      ? "flex"
+                      : "none",
                 }}
               >
                 <CardHeader className="text-white p-4 md:p-6 flex-shrink-0">
